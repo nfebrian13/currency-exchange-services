@@ -1,13 +1,29 @@
 package com.course.microservices.model;
 
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.Id;
+
 import java.math.BigDecimal;
 
+@Entity(name = "exchange_value")
 public class ExchangeValue {
 
+    @Id
+    @GeneratedValue
     private Long id;
+
+    @Column(name = "currency_from")
     private String from;
+
+    @Column(name = "currency_to")
     private String to;
+
+    @Column(name = "conversion_multiple")
     private BigDecimal conversionMultiple;
+
+    @Column(name = "port")
     private int port;
 
     protected ExchangeValue() {
